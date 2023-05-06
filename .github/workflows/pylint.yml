@@ -8,7 +8,5 @@ jobs:
     - uses: actions/checkout@v2
     - name: Тесты
       run: |
-        chmod +x test_creation.sh
-        chmod +x test_removal.sh
-        ./test_creation.sh
-        ./test_removal.sh
+        chmod +x tests/main_test.sh
+        ./tests/main_test.sh
