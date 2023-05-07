@@ -3,7 +3,7 @@
 input_file=tests/data/input.txt
 output_file=output
 
-echo "---Запущен тест Аргументов---"
+echo "---Запущен тест Аргументов(+) ---"
 
 chmod +x HW_1.sh
 ./HW_1.sh -i $input_file -o $output_file -- 1 > /dev/null
