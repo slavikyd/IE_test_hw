@@ -15,9 +15,9 @@ else
 fi
 
 echo "Main test started"
-./$test_file > /dev/null
+./$test_file test_inp.txt output.txt > /dev/null
 echo "1"
-testOut=`cat $2`
+testOut=`cat output.txt`
 if [[ $testOut -eq 5 ]]
 then
     echo "Test passed"
