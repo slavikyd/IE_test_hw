@@ -13,8 +13,8 @@ then
     help_message
 fi
 
-output_file=""
-input_file=""
+output_file=$2
+input_file=$1
 
 while [[ -n $1 ]]
 do
