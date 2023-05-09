@@ -1,0 +1,13 @@
+name: Test
+on: [push]
+jobs:
+  tests:
+    name: Test of Egor's script
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Base test
+      run: |
+        chmod +x HW_1.sh
+        chmod +x test.sh
+        ./test.sh HW_1.sh
