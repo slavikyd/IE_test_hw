@@ -18,13 +18,15 @@ echo "Main test started"
 input_file=test_inp.txt
 output_file=output.txt
 chmod +x HW_1.sh
-./HW_1.sh -i $input_file -o $output_file -- 1 > /dev/null
+ ./HW_1.sh -i test_inp.txt -o output.txt -- 1
 
 testOut=`cat output.txt`
-if [[ $testOut == "Четные числа" ]]
-then
-    echo "Test passed"
-else
-    echo "Test failed"
-    exit 1
-fi
+for line in testOut
+do
+    if [[ $line == "Четные числа" ]]
+    then
+        echo "Test passed"
+    else
+        echo "Test failed"
+        exit 1
+    fi
