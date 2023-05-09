@@ -26,6 +26,7 @@ do
     if [[ $line == "Четные числа" ]]
     then
         echo "Test passed"
+        exit 0
     else
         echo "Test failed"
         exit 1
