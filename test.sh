@@ -20,15 +20,13 @@ output_file=output.txt
 chmod +x HW_1.sh
  ./HW_1.sh -i test_inp.txt -o output.txt -- 1
 
-testOut=`cat output.txt`
-for line in testOut
-do
-    if [[ $line == "Четные числа" ]]
-    then
-        echo "Test passed"
-        exit 0
-    else
-        echo "Test failed"
-        exit 1
-    fi
-done
+testOut=`grep -c "Четные числа" output.txt`
+
+if [[ $testOut -ne 0 ]]
+then
+    echo "Test passed"
+    exit 0
+else
+    echo "Test failed"
+    exit 1
+fi
