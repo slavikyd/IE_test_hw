@@ -15,8 +15,11 @@ else
 fi
 
 echo "Main test started"
-./$test_file test_inp.txt output.txt > /dev/null
-echo "1"
+input_file=test_inp.txt
+output_file=output.txt
+chmod +x HW_1.sh
+./HW_1.sh -i $input_file -o $output_file -- 1 > /dev/null
+
 testOut=`cat output.txt`
 if [[ $testOut -eq 5 ]]
 then
