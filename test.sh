@@ -21,12 +21,35 @@ chmod +x HW_1.sh
  ./HW_1.sh -i test_inp.txt -o output.txt -- 1
 
 testOut=`grep -c "Четные числа" output.txt`
-
+counter=0
 if [[ $testOut -ne 0 ]]
 then
-    echo "Test passed"
-    exit 0
-else
-    echo "Test failed"
-    exit 1
+    for line in $(cat output.txt)
+    do
+        if [[ $line%2 -eq 0 ]]
+        then
+            counter=$((counter+1))
+    done
+    if [[ $counter -ge 1 ]]
+    then
+        echo "Main test passed"
+        exit 0
+    fi
+elif [[ $testOut -ge 1 ]]
+then
+    testOut=`grep -c "Нечетные числа" output.txt`
+    if [[ $testOut -ne 0 ]]
+    then
+    for line in $(cat output.txt)
+    do
+        if [[ $line%2 -gt 0 ]]
+        then
+            counter=$((counter+1))
+    done
+    if [[ $counter -ge 1 ]]
+    then
+        echo "Main test passed"
+        exit 0
+    fi
 fi
+
