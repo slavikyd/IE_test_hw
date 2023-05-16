@@ -36,7 +36,9 @@ then
         echo "Main test passed"
         exit 0
     fi
-elif [[ $testOut -ge 1 ]]
+
+
+elif [[ $testOut -eq 0 ]]
 then
     testOut=`grep -c "Нечетные числа" output.txt`
     if [[ $testOut -ne 0 ]]
