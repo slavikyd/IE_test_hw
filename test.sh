@@ -26,7 +26,7 @@ if [[ $testOut -ne 0 ]]
 then
     for line in $(cat output.txt)
     do
-        if [[ $(($line+1)) -eq 0 ]]
+        if [[ $(( ($line+1)%2 )) -eq 0 ]]
         then
             counter=$((counter+1))
         fi
@@ -45,7 +45,7 @@ then
     then
     for line in $(cat output.txt)
     do
-        if [[ $(($line+1)) % 2 -gt 0 ]]
+        if [[ $(( ($line+1)%2 )) -gt 0 ]]
         then
             counter=$((counter+1))
         fi
