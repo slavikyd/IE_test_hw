@@ -29,6 +29,7 @@ then
         if [[ $line%2 -eq 0 ]]
         then
             counter=$((counter+1))
+        fi
     done
     if [[ $counter -ge 1 ]]
     then
@@ -45,6 +46,7 @@ then
         if [[ $line%2 -gt 0 ]]
         then
             counter=$((counter+1))
+        fi
     done
     if [[ $counter -ge 1 ]]
     then
