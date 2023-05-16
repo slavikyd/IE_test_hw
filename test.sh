@@ -53,5 +53,6 @@ then
         echo "Main test passed"
         exit 0
     fi
+    fi
 fi
 
