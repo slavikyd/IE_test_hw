@@ -24,13 +24,17 @@ testOut=`grep -c "Четные числа" output.txt`
 counter=0
 if [[ $testOut -ne 0 ]]
 then
-    for line in $(cat output.txt)
+    i=0
+    while read line
     do
-        if [[ $(( ($line+1)%2 )) -eq 0 ]]
+        if [ $i != 0 ]; then
+        if [[ $line%2 -eq 0 ]]
         then
             counter=$((counter+1))
         fi
-    done
+        fi
+        i=$i+1
+    done < output.txt
     if [[ $counter -ge 1 ]]
     then
         echo "Main test passed"
@@ -43,13 +47,17 @@ then
     testOut=`grep -c "Нечетные числа" output.txt`
     if [[ $testOut -ne 0 ]]
     then
-    for line in $(cat output.txt)
+    i=0
+    while read line
     do
-        if [[ $(( ($line+1)%2 )) -gt 0 ]]
+        if [ $i != 0 ]; then
+        if [[ $line%2 -gt 0 ]]
         then
             counter=$((counter+1))
         fi
-    done
+        fi
+        i=$i+1
+    done < output.txt
     if [[ $counter -ge 1 ]]
     then
         echo "Main test passed"
